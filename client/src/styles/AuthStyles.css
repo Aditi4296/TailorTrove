@@ -5,16 +5,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 70vh;
   flex-direction: column;
-  background-color: #ffdee9;
-  background-image: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
+  background-image: url('../../public/images/login.jpeg');
+  /* background-repeat: no-repeat;
+  background-size: cover; */
+  width: 100%;
+  height: 100%;
 }
 
 .form-container form {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(248, 181, 115, 0.35) 0px 5px 15px;
   padding: 20px;
-  background-color: #fff;
+  /* background: transparent; */
+  background-color: rgba(24, 11, 1, 0.4);
+  border-radius: 10px;
+  
 }
 
 .form-container form .title {
@@ -22,12 +27,35 @@
   margin-bottom: 15px;
   font-weight: bold;
   font-family: "Playfair Display", serif;
+  color: #000;
 }
 
 .form-container form input {
   border: none;
   border-bottom: 1px solid #000;
   border-radius: 0;
+  background-color: transparent;
+
+  
+}
+
+.form-container form input:focus{
+  margin : 0;
+  background-color: transparent;
+  outline-color: transparent;
+  /* box-shadow: none; */
+  box-shadow: 0 0 5px 3px rgba(255, 213, 173, 0.5);
+  outline: none; 
+  border-bottom: 1px solid #000;
+  
+}
+
+.form-container form input::placeholder {
+  color: #ccc; 
+}
+
+.form-container form input:focus::placeholder {
+  color: #ccc;
 }
 
 .form-container form button {
@@ -40,17 +68,17 @@
 
 .form-container form button:hover {
   border: 1px solid black;
-  background: #000000; /* fallback for old browsers */
+  background: #000000;
   background: -webkit-linear-gradient(
     to right,
     #434343,
     #000000
-  ); /* Chrome 10-25, Safari 5.1-6 */
+  );
   background: linear-gradient(
     to right,
     #434343,
     #000000
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  ); 
 }
 
 .forgot-btn {

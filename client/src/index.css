@@ -15,14 +15,25 @@
   font-size: 17px;
   line-height: 26px;
   text-transform: uppercase;
-  box-shadow: 0 8px 6px -6px gray;
-  --webkit-box-shadow: 0 8px 6px -6px gray;
-  border-bottom: solid gray !important;
+  /* box-shadow: 0 8px 6px -6px gray;
+  --webkit-box-shadow: 0 8px 6px -6px gray; */
+  border: none; /* Remove border */
+  /* background: linear-gradient(to bottom right, #defafa, #f5e4e0);  */
+  background-color: transparent;
 }
 
 .nav-link {
   font-weight: 300 !important;
 }
+
+/* Optionally, adjust padding and margins for the navbar */
+.navbar {
+  padding: 10px 20px; /* Adjust padding as needed */
+  margin-bottom: 0; /* Ensure no extra space below the navbar */
+}
+
+
+
 
 .active {
   border-bottom: 2px solid black;
@@ -60,7 +71,7 @@
     #434343,
     #000000
   ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #434343, #000000);
+  background: linear-gradient(to bottom right, #f6ded7, rgb(140, 140, 140));
 }
 
 .footer a {
