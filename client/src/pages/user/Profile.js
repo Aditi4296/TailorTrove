@@ -57,7 +57,7 @@ const Profile = () => {
             <UserMenu />
           </div>
           <div className="col-md-8">
-            <div className="form-container" style={{ marginTop: "-40px" }}>
+            <div className="form-container" style={{ marginTop: "-40px" , height: "80vh", width:"72vw" }}>
               <form onSubmit={handleSubmit}>
                 <h4 className="title">USER PROFILE</h4>
                 <div className="mb-3">
