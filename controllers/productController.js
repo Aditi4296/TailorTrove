@@ -19,7 +19,7 @@ var gateway = new braintree.BraintreeGateway({
 
 export const createProductController = async (req, res) => {
   try {
-    const { name, description, price, category, quantity, shipping } =
+    const { name, description, price, category, quantity, shipping, sizes } =
       req.fields;
     const { photo } = req.files;
     //alidation
@@ -40,7 +40,18 @@ export const createProductController = async (req, res) => {
           .send({ error: "photo is Required and should be less then 1mb" });
     }
 
-    const products = new productModel({ ...req.fields, slug: slugify(name) });
+    // const products = new productModel({ ...req.fields, slug: slugify(name) });
+    const slug = slugify(name);
+    const products = new productModel({
+      name,
+      description,
+      price,
+      category,
+      quantity,
+      shipping,
+      slug,
+      sizes,
+    });
     if (photo) {
       products.photo.data = fs.readFileSync(photo.path);
       products.photo.contentType = photo.type;

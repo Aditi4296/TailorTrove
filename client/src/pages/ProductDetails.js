@@ -9,6 +9,7 @@ const ProductDetails = () => {
   const navigate = useNavigate();
   const [product, setProduct] = useState({});
   const [relatedProducts, setRelatedProducts] = useState([]);
+  const [selectedSize, setSelectedSize] = useState("");
 
   //initalp details
   useEffect(() => {
@@ -26,6 +27,9 @@ const ProductDetails = () => {
       console.log(error);
     }
   };
+  const handleSizeChange = (event) => {
+    setSelectedSize(event.target.value);
+  };
   //get similar product
   const getSimilarProduct = async (pid, cid) => {
     try {
@@ -35,6 +39,14 @@ const ProductDetails = () => {
       setRelatedProducts(data?.products);
     } catch (error) {
       console.log(error);
+    }
+  };
+  const parseSizes = (sizesString) => {
+    try {
+      return JSON.parse(sizesString);
+    } catch (error) {
+      console.error("Error parsing sizes:", error);
+      return [];
     }
   };
   return (
@@ -60,6 +72,19 @@ const ProductDetails = () => {
               style: "currency",
               currency: "INR",
             })}
+          </h6>
+          <h6>
+            <div className="size-selection">
+              <label htmlFor="size">Select Size: </label>
+              <select id="size" value={selectedSize} onChange={handleSizeChange}>
+                <option value=""> --Select Size-- </option>
+                {parseSizes(product.sizes)?.map((size) => (
+                  <option key={size} value={size}>
+                    {size}
+                  </option>
+                ))}
+              </select>
+            </div>
           </h6>
           <h6>Category : {product?.category?.name}</h6>
           <button class="btn btn-secondary ms-1">ADD TO CART</button>

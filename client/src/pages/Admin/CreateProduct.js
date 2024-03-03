@@ -17,6 +17,8 @@ const CreateProduct = () => {
   const [quantity, setQuantity] = useState("");
   const [shipping, setShipping] = useState("");
   const [photo, setPhoto] = useState("");
+  const [availableSizes, setAvailableSizes] = useState([]); 
+  const [selectedSizes, setSelectedSizes] = useState([]);
 
   //get all category
   const getAllCategory = async () => {
@@ -46,6 +48,7 @@ const CreateProduct = () => {
       productData.append("quantity", quantity);
       productData.append("photo", photo);
       productData.append("category", category);
+      productData.append("sizes", JSON.stringify(selectedSizes));
       const { data } = axios.post(
         "/api/v1/product/create-product",
         productData
@@ -88,6 +91,24 @@ const CreateProduct = () => {
                   </Option>
                 ))}
               </Select>
+              <div className="mb-3">
+                <Select
+                  bordered={false}
+                  mode="multiple" // Allow multiple size selection
+                  placeholder="Select Sizes"
+                  size="large"
+                  showSearch
+                  className="form-select mb-3"
+                  onChange={(values) => {
+                    setSelectedSizes(values);
+                  }}
+                >
+                  <Option value="S">Small</Option>
+                  <Option value="M">Medium</Option>
+                  <Option value="L">Large</Option>
+                  <Option value="XL">Extra Large</Option>
+                </Select>
+              </div>
               <div className="mb-3">
                 <label className="btn btn-outline-secondary col-md-12">
                   {photo ? photo.name : "Upload Photo"}

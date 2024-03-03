@@ -17,6 +17,21 @@ const Products = () => {
       toast.error("Someething Went Wrong");
     }
   };
+  const sizeMapping = {
+    S: "Small",
+    M: "Medium",
+    L: "Large",
+    XL: "Extra Large",
+  };
+
+  const parseSizes = (sizesString) => {
+    try {
+      return JSON.parse(sizesString);
+    } catch (error) {
+      console.error("Error parsing sizes:", error);
+      return [];
+    }
+  };
 
   //lifecycle method
   useEffect(() => {
@@ -46,6 +61,7 @@ const Products = () => {
                   <div className="card-body">
                     <h5 className="card-title">{p.name}</h5>
                     <p className="card-text">{p.description}</p>
+                    <p className="card-text">Sizes: {parseSizes(p.sizes).join(", ")}</p>
                   </div>
                 </div>
               </Link>
