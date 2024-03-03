@@ -45,7 +45,7 @@ const ProductDetails = () => {
             src={`/api/v1/product/product-photo/${product._id}`}
             className="card-img-top"
             alt={product.name}
-            height="300"
+            height="550"
             width={"350px"}
           />
         </div>
@@ -58,7 +58,7 @@ const ProductDetails = () => {
             Price :
             {product?.price?.toLocaleString("en-US", {
               style: "currency",
-              currency: "USD",
+              currency: "INR",
             })}
           </h6>
           <h6>Category : {product?.category?.name}</h6>
