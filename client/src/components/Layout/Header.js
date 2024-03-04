@@ -37,7 +37,8 @@ const Header = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
             <Link to="/" className="navbar-brand">
-              🛒 Tailor Trove
+              <img src="/images/logo.png" style={{width:"130px",
+            height:"70px", }}/>
             </Link>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <SearchInput />

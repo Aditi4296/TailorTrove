@@ -1,9 +1,8 @@
 .banner-img {
   margin-top: 11vh;
   max-width: 70%;
-  height: 70vh;
+  height: 73vh;
   margin-left: 15vw;
-  margin-bottom: 10vw;
   border-radius: 0px;
   border: 5px solid transparent;
   padding: 5px;
@@ -19,9 +18,10 @@
 }
 
 
-.home-page h1 {
+/* .home-page h1 {
   color: gray;
   font-family: "Playfair Display", serif;
+  margin-top: -120px;
 }
 
 .home-page {
@@ -31,7 +31,36 @@
 .home-page .card {
   background-color: rgba(128, 128, 128, 0.097);
   width: 18rem;
+} */
+
+.home-page {
+  /* background: linear-gradient(to bottom right, #d0fafa, #f6ded7); */
+  padding: 20px; /* Add some padding to space out the content */
+  background: url("../../public/images/decoration.jpeg");
+  /* filter: blur(5px); */
 }
+
+.home-page h1 {
+  color: gray; /* Match the color to the banner */
+  font-family: "Playfair Display", serif;
+  margin-top: 20px; /* Adjust margin to fit with the padding */
+}
+
+.home-page .card {
+  /* background-color: rgba(255, 255, 255, 0.8);  */
+  
+  width: 18rem;
+  margin-bottom: 20px; /* Add some space between cards */
+}
+
+.home-page .card-text {
+  color: rgb(90, 89, 89); /* Match the text color to the banner */
+}
+
+.home-page .card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect on hover */
+}
+
 .home-page .card-name-price {
   display: flex;
   flex-direction: row;
@@ -51,9 +80,9 @@
   font-weight: bold;
 }
 
-.home-page .card-text {
+/* .home-page .card-text {
   color: rgb(90, 89, 89);
-}
+} */
 
 .home-page .card img:hover {
   transform: scale(0.9);
@@ -65,10 +94,47 @@
 /* ==================
 filters
 ============== */
-.filters h4 {
-  margin-top: 100px;
+/* .filters h4 {
+  margin-top: 0px;
   color: gray !important;
   border-bottom: 1px solid rgba(128, 128, 128, 0.337);
+}
+
+.filters button {
+  background-color: black;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  margin-top: 20px;
+} */
+
+.filters {
+  /* From https://css.glass */
+background: rgba(246, 222, 215, 0.09);
+border-radius: 20px;
+box-shadow: 0 4px 30px rgba(245, 200, 200, 0.1);
+backdrop-filter: blur(40px);
+height: 500px;
+-webkit-backdrop-filter: blur(17.5px);
+/* border: 1px solid rgba(246, 222, 215, 0.04); */
+  background: linear-gradient(to bottom right, #d0fafa, #fbf9d2, 0.5); 
+  padding: 20px; /* Add some padding to space out the content */
+  /*border-radius: 800px; /* Add a subtle border-radius for consistency */
+}
+
+.filters h4 {
+  margin-top: 0px;
+  color: gray !important; /* Match the text color to the banner */
+  border-bottom: 1px solid rgba(128, 128, 128, 0.337);
+}
+
+.filters button {
+  background-color: black; /* Match the button color to the banner */
+  color: white; /* Match the text color to the banner */
+  width: 100%;
+  border: none;
+  border-radius: 5px; /* Add a subtle border-radius for consistency */
+  margin-top: 20px;
 }
 
 .ant-checkbox-wrapper:first-of-type {
@@ -83,13 +149,7 @@ filters
   margin-left: 10px;
 }
 
-.filters button {
-  background-color: black;
-  width: 100%;
-  border: none;
-  border-radius: 0;
-  margin-top: 20px;
-}
+
 
 .loadmore {
   color: green;

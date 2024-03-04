@@ -143,6 +143,7 @@ const HomePage = () => {
         </button>
       </div>
       </div>
+      <img src="/images/brand1.jpg" style={{marginLeft:"20px", width: "10vw", height: "10vh", borderRadius: "150px", marginRight:"20px"}}/><img src="/images/brand2.jpeg" style={{width: "10vw", height: "25vh", borderRadius: "150px", marginRight:"20px"}}/><img src="/images/brand3.png" style={{width: "10vw", height: "25vh", borderRadius: "150px", marginRight:"20px"}}/><img src="/images/brand4.png" style={{width: "10vw", height: "25vh", borderRadius: "150px", marginRight:"20px"}}/><img src="/images/brand5.jpeg" style={{width: "10vw", height: "25vh", borderRadius: "150px", marginRight:"20px"}}/><img src="/images/brand6.jpeg" style={{width: "10vw", height: "10vh", borderRadius: "150px", marginRight:"20px"}}/><img src="/images/brand7.jpeg" style={{width: "10vw", height: "10vh", borderRadius: "150px", marginRight:"20px"}}/><img src="/images/brand8.jpeg" style={{width: "10vw", height: "10vh", borderRadius: "150px", marginRight:"20px"}}/>
       {/* banner image */}
       <div className="container-fluid row mt-3 home-page">
         <div className="col-md-3 filters">
@@ -189,7 +190,7 @@ const HomePage = () => {
                 />
                 <div className="card-body">
                   <div className="card-name-price">
-                    <h5 className="card-title">{p.name}</h5>
+                    <h5 className="card-title two-line">{p.name}</h5>
                     <h5 className="card-title card-price">
                       {p.price.toLocaleString("en-US", {
                         style: "currency",
@@ -197,12 +198,12 @@ const HomePage = () => {
                       })}
                     </h5>
                   </div>
-                  <p className="card-text ">
+                  <p className="card-text two-line">
                     {p.description.substring(0, 60)}...
                   </p>
                   <div className="card-name-price">
                     <button
-                      className="btn btn-info ms-1"
+                      className="btn btn-info ms-1 more"
                       onClick={() => navigate(`/product/${p.slug}`)}
                     >
                       More Details

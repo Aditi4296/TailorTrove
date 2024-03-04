@@ -71,7 +71,7 @@
     #434343,
     #000000
   ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom right, #f6ded7, rgb(140, 140, 140));
+  background: linear-gradient(to bottom right, #fffcdd, rgb(192, 237, 255));
 }
 
 .footer a {

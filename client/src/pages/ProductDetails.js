@@ -62,10 +62,11 @@ const ProductDetails = () => {
           />
         </div>
         <div className="col-md-6 product-details-info">
-          <h1 className="text-center">Product Details</h1>
+          {/* <h1 className="text-center">Product Details</h1> */}
+          <h1>{product.name}</h1>
           <hr />
-          <h6>Name : {product.name}</h6>
-          <h6>Description : {product.description}</h6>
+          {/* <h6>Name : {product.name}</h6> */}
+          <p>Description : {product.description}</p>
           <h6>
             Price :
             {product?.price?.toLocaleString("en-US", {
@@ -92,7 +93,7 @@ const ProductDetails = () => {
       </div>
       <hr />
       <div className="row container similar-products">
-        <h4>Similar Products ➡️</h4>
+        <h4>Similar Products </h4>
         {relatedProducts.length < 1 && (
           <p className="text-center">No Similar Products found</p>
         )}
@@ -106,7 +107,7 @@ const ProductDetails = () => {
               />
               <div className="card-body">
                 <div className="card-name-price">
-                  <h5 className="card-title">{p.name}</h5>
+                  <h5 className="card-title two-line">{p.name}</h5>
                   <h5 className="card-title card-price">
                     {p.price.toLocaleString("en-US", {
                       style: "currency",
@@ -114,7 +115,7 @@ const ProductDetails = () => {
                     })}
                   </h5>
                 </div>
-                <p className="card-text ">
+                <p className="card-text two-line">
                   {p.description.substring(0, 60)}...
                 </p>
                 <div className="card-name-price">
